@@ -1,7 +1,16 @@
-```text
 input/
 output/
 __pycache__/
 *.exe
+
+# Video formats to ignore
 *.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# System and Logs
 .vscode/
+*.log
+*.txt

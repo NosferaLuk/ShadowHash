@@ -1,22 +1,66 @@
-# ShadowHash: Video Uniquifier & Metadata Scrubber 🎥
+# ShadowHash Pro 🎥
 
-A specialized Python tool designed for content creators and social media managers. It processes video files to alter their cryptographic hash (MD5) without visibly affecting quality, making them unique to algorithms.
+ShadowHash is a Python automation tool designed for content creators, agencies, and social media managers. It processes video files to alter their digital fingerprints (MD5, Metadata, Visual & Audio Signals) to mitigate algorithm duplication detection.
 
-## 🚀 Features
+## 🚀 Features (v3.1)
 
-- **Hash Mutation:** Applies imperceptible brightness/contrast adjustments (`0.005`) to change pixel data.
-- **Metadata Scrub:** Completely wipes original metadata.
-- **High Performance:** Uses `ffmpeg` with `ultrafast` preset for bulk processing.
-- **Privacy:** Randomizes output filenames.
-- **Audio Passthrough:** Keeps original audio quality without re-encoding.
+### Advanced Evasion Mode (Default):
+* **Visual Noise Injection:** Adds imperceptible film grain to alter compression structure.
+* **Smart Crop:** Zooms in 1-4% (configurable) to break geometric edge detection.
+* **Audio Scrambling:** Re-encodes audio with micro-volume shifts to change the audio stream hash.
 
-## 🛠️ Requirements
+### General Features:
+* **Multi-Format Support:** Works with .mp4, .mov, .avi, .mkv, .webm.
+* **Multi-Threading:** Processes multiple videos simultaneously for high throughput.
+* **Audit Logging:** Automatically maintains a `processing_log.txt` history.
+* **Metadata Wipe:** Completely strips global metadata.
+* **Cross-Platform:** Works natively on Windows, Linux, and macOS.
 
-1. **Python 3.x**
-2. **FFmpeg** installed and added to your system PATH (or placed in the script folder).
+## 🛠️ Installation
 
-## ⚡ Quick Start
+Clone the repository:
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/NosferaLuk/ShadowHash.git
+```bash
+git clone [https://github.com/NosferaLuk/ShadowHash.git](https://github.com/NosferaLuk/ShadowHash.git)
+cd ShadowHash
+
+```
+
+**Requirements:**
+
+* Python 3.8+
+* FFmpeg (Installed in system PATH or placed in the project folder)
+
+## ⚡ Usage
+
+Run the script directly via terminal:
+
+```bash
+# Standard Run (Advanced Mode + Medium Intensity)
+python video_hasher.py
+
+# High Intensity (More noise, 4% crop - Better evasion, slightly visible)
+python video_hasher.py --intensity high
+
+# Fast Mode (Only Metadata/MD5 - No heavy filters)
+python video_hasher.py --mode fast
+
+# Custom Input/Output folders
+python video_hasher.py -i ./raw_footage -o ./ready_to_upload
+
+# Maximize Performance (Increase threads)
+python video_hasher.py --threads 8
+
+```
+
+## ⚙️ Filter Intensity Settings
+
+| Setting | Noise Level | Crop (Zoom) | Use Case |
+| --- | --- | --- | --- |
+| **Low** | 2 | 1% | High quality requirements, YouTube 4K |
+| **Medium** (Default) | 5 | 2% | General usage (TikTok, Reels, Shorts) |
+| **High** | 8 | 4% | Aggressive repurposing, avoiding strict flags |
+
+## ⚠️ Disclaimer
+
+This tool is intended for content management, archiving, and legitimate testing purposes. The effectiveness of algorithm evasion varies by platform and updates frequently. Use responsibly.
