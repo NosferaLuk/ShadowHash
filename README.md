@@ -19,4 +19,4 @@ A specialized Python tool designed for content creators and social media manager
 
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/NosferaLuk/ShadowHash.git](https://github.com/NosferaLuk/ShadowHash.git)
+   git clone https://github.com/NosferaLuk/ShadowHash.git
