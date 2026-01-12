@@ -1,0 +1,7 @@
+```text
+input/
+output/
+__pycache__/
+*.exe
+*.mp4
+.vscode/
